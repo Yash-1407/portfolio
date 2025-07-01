@@ -12,19 +12,18 @@ This is a fully animated, aesthetically pleasing portfolio website for Pooja Rat
 - **UI Components**: Radix UI primitives with shadcn/ui component system
 - **Animation Library**: Framer Motion for smooth animations and transitions
 - **Routing**: Wouter for lightweight client-side routing
-- **State Management**: TanStack Query for server state management
+- **State Management**: React hooks for local state management
 - **Build Tool**: Vite for fast development and optimized builds
 
 ### Backend Architecture
 - **Runtime**: Node.js with Express.js framework
 - **Language**: TypeScript with ES modules
-- **Database ORM**: Drizzle ORM for type-safe database interactions
-- **Database**: PostgreSQL (configured for Neon serverless)
-- **Session Storage**: PostgreSQL sessions with connect-pg-simple
+- **Database**: No database - simplified static portfolio
+- **API**: Single contact form endpoint for message logging
 
 ### Key Design Decisions
-- **Monorepo Structure**: Organized with separate `client/`, `server/`, and `shared/` directories
-- **Type Safety**: Full TypeScript implementation across frontend, backend, and shared schemas
+- **Simplified Structure**: Organized with separate `client/` and `server/` directories only
+- **No Database**: Completely static portfolio with contact form logging
 - **Component-Driven**: Reusable animated components for consistent UX
 - **Mobile-First**: Responsive design with mobile considerations
 
@@ -51,29 +50,26 @@ This is a fully animated, aesthetically pleasing portfolio website for Pooja Rat
 ## Data Flow
 
 ### Frontend Data Management
-- **React Query**: Handles API state management and caching
-- **Form Handling**: React Hook Form with Zod validation
+- **Local State**: React hooks for component state management
+- **Form Handling**: Native form handling with fetch API
 - **Animation State**: Framer Motion manages component animation states
 - **Toast Notifications**: Custom toast system for user feedback
 
 ### Backend API Structure
-- **RESTful Routes**: Organized under `/api` prefix
+- **Single Endpoint**: Contact form submission at `/api/contact`
 - **Middleware**: Request logging, JSON parsing, and error handling
-- **Database Operations**: Abstracted through storage interface pattern
+- **No Database**: Contact submissions are logged to console only
 
 ## External Dependencies
 
 ### Core Libraries
 - **Framer Motion**: Advanced animation capabilities
 - **Radix UI**: Accessible component primitives
-- **TanStack Query**: Server state management
-- **Drizzle ORM**: Type-safe database operations
-- **Neon Database**: Serverless PostgreSQL hosting
+- **Tailwind CSS**: Utility-first styling framework
 
 ### Development Tools
 - **Vite**: Fast build tool and development server
 - **TypeScript**: Type safety across the stack
-- **Tailwind CSS**: Utility-first styling framework
 - **ESBuild**: Fast JavaScript bundling
 
 ## Deployment Strategy
@@ -81,23 +77,24 @@ This is a fully animated, aesthetically pleasing portfolio website for Pooja Rat
 ### Build Process
 - **Frontend**: Vite builds optimized static assets to `dist/public`
 - **Backend**: ESBuild bundles server code to `dist/index.js`
-- **Database**: Drizzle migrations deployed via `db:push` command
+- **No Database**: Simple static portfolio deployment
 
 ### Environment Configuration
 - **Development**: Hot reload with Vite middleware integration
 - **Production**: Static file serving with Express
-- **Database**: Environment-based connection via `DATABASE_URL`
 
 ### Hosting Considerations
 - **Static Assets**: Served from `dist/public` directory
-- **API Routes**: Express server handles `/api` endpoints
-- **Database**: PostgreSQL connection with session storage
+- **API Routes**: Single contact endpoint at `/api/contact`
+- **No Database**: Simplified deployment without database dependencies
 
 ## Changelog
 
 ```
 Changelog:
-- July 01, 2025. Initial setup
+- July 01, 2025. Initial setup with full database architecture
+- July 01, 2025. Simplified structure - removed database, storage, and routes files
+- July 01, 2025. Converted to static portfolio with single contact endpoint
 ```
 
 ## User Preferences

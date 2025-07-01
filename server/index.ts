@@ -1,5 +1,5 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
+import { createServer } from "http";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
@@ -36,8 +36,22 @@ app.use((req, res, next) => {
   next();
 });
 
+// Simple API endpoint for contact form (just logs the message)
+app.post("/api/contact", (req: Request, res: Response) => {
+  const { name, email, subject, message } = req.body;
+  
+  // Log the contact form submission
+  log(`Contact form submission from ${name} (${email}): ${subject}`, "contact");
+  log(`Message: ${message}`, "contact");
+  
+  res.json({ 
+    success: true, 
+    message: "Thank you for your message! I'll get back to you soon." 
+  });
+});
+
 (async () => {
-  const server = await registerRoutes(app);
+  const server = createServer(app);
 
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
