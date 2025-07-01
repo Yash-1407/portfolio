@@ -160,6 +160,7 @@ export default function Portfolio() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
+              className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <Button
                 onClick={() => scrollToSection('about')}
@@ -168,6 +169,16 @@ export default function Portfolio() {
                 Explore My Work
                 <ChevronDown className="ml-2 w-5 h-5" />
               </Button>
+              <motion.a
+                href="/Pooja_Rathod_CV.pdf"
+                download="Pooja_Rathod_CV.pdf"
+                className="bg-white border-2 border-rose-pink text-rose-pink px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-rose-pink hover:text-white flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="h-5 w-5" />
+                Download CV
+              </motion.a>
             </motion.div>
           </AnimatedSection>
         </div>
@@ -506,6 +517,24 @@ export default function Portfolio() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Let's Connect</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-rose-pink to-lavender mx-auto rounded-full"></div>
             <p className="text-lg text-secondary mt-6">Ready to collaborate? Let's create something amazing together!</p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-8"
+            >
+              <motion.a
+                href="/Pooja_Rathod_CV.pdf"
+                download="Pooja_Rathod_CV.pdf"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-pink to-lavender text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Download className="h-5 w-5" />
+                Download My CV
+              </motion.a>
+            </motion.div>
           </AnimatedSection>
           
           <ContactForm />
