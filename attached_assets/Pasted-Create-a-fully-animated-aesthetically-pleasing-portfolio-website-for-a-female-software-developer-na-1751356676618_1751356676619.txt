@@ -1,0 +1,56 @@
+Create a fully animated, aesthetically pleasing portfolio website for a female software developer named *Pooja Rathod*. The theme should be **girly yet professional**, incorporating soft colors like pastel pinks, lavenders, and subtle gradients. Use flowing animations for transitions between sections and hover effects on buttons, cards, and images.
+
+**Include the following animated sections:**
+
+1. **Landing Page:**
+   - Name: Pooja Rathod
+   - Role: Aspiring Software Developer
+   - Background animation (like floating shapes or particles)
+   - Animated typing effect for “Java | Python | Fullstack | Android Developer”
+
+2. **About Me:**
+   - Short animated paragraph introducing Pooja
+   - Smooth fade-in of details like education and location
+   - Animated icons for location (Solapur), email, and phone
+
+3. **Education Timeline:**
+   - Animated vertical timeline with:
+     - B.Tech in Computer Science (NBNSCOE) – GPA: 9.70
+     - Diploma in Computer Science (SSWP) – 84.90%
+     - SSC – 83.40%
+
+4. **Experience Cards:**
+   - Animated flip cards for each:
+     - Technical Coordinator @ NBNSCOE
+     - Women’s Rep @ ISTE
+     - Intern @ WisdomSprouts
+
+5. **Skills Section:**
+   - Animated icons and progress bars for:
+     - Python, Java, Fullstack, MySQL
+     - Problem-Solving, Team Collaboration, Communication, Time Management
+
+6. **Projects Showcase (Gallery-style with hover animations):**
+   - AI ChatBot (with GPT API)
+   - Ecommerce Site for Farmers (Agrocraft)
+   - AI-Based Ayurveda App
+
+7. **Achievements (Animated badge/grid view):**
+   - MIT Hackathon Honor
+   - Winner of College Fest
+   - Women’s Representative
+   - 30+ Events Coordinated
+
+8. **Publications:**
+   - “Modern Ethical Considerations in AI” (Add animated hover effect to view details)
+
+9. **Contact Me Section:**
+   - Animated contact form
+   - Social links with hover effects (LinkedIn, GitHub)
+
+**Additional Styling Guidelines:**
+- Use a soft, pastel color palette (pinks, purples, whites)
+- Smooth scroll behavior
+- Modern UI font (like Poppins or Nunito)
+- Responsive layout for mobile and desktop
+- CSS animations or GSAP for advanced motion
