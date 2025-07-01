@@ -8,6 +8,8 @@ import FlipCard from '@/components/FlipCard';
 import TimelineItem from '@/components/TimelineItem';
 import ProjectCard from '@/components/ProjectCard';
 import ContactForm from '@/components/ContactForm';
+import MobileNav from '@/components/MobileNav';
+import LazyImage from '@/components/LazyImage';
 import { Button } from '@/components/ui/button';
 
 export default function Portfolio() {
@@ -89,7 +91,7 @@ export default function Portfolio() {
                 <motion.button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-gray-700 hover:text-rose-pink transition duration-300"
+                  className="text-primary hover:text-rose-pink transition duration-300"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -98,6 +100,8 @@ export default function Portfolio() {
                 </motion.button>
               ))}
             </div>
+            
+            <MobileNav scrollToSection={scrollToSection} />
           </div>
         </div>
       </nav>
@@ -116,7 +120,7 @@ export default function Portfolio() {
             </motion.h1>
             
             <motion.h2 
-              className="text-2xl md:text-3xl text-gray-700 mb-8 font-semibold"
+              className="text-2xl md:text-3xl text-primary mb-8 font-semibold"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -124,7 +128,7 @@ export default function Portfolio() {
               Aspiring Software Developer
             </motion.h2>
             
-            <div className="text-xl md:text-2xl text-gray-600 mb-12 h-16 flex items-center justify-center">
+            <div className="text-xl md:text-2xl text-secondary mb-12 h-16 flex items-center justify-center">
               <TypingAnimation 
                 text="Java | Python | Fullstack | Android Developer"
                 speed={100}
@@ -138,15 +142,15 @@ export default function Portfolio() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
             >
-              <div className="flex items-center text-gray-600 hover:scale-105 transition-transform cursor-pointer">
+              <div className="flex items-center text-secondary hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-2 h-2 bg-rose-pink rounded-full mr-2"></span>
                 <span>Solapur, Maharashtra</span>
               </div>
-              <div className="flex items-center text-gray-600 hover:scale-105 transition-transform cursor-pointer">
+              <div className="flex items-center text-secondary hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-2 h-2 bg-lavender rounded-full mr-2"></span>
                 <span>poojarathod1892004@gmail.com</span>
               </div>
-              <div className="flex items-center text-gray-600 hover:scale-105 transition-transform cursor-pointer">
+              <div className="flex items-center text-secondary hover:scale-105 transition-transform cursor-pointer">
                 <span className="w-2 h-2 bg-coral rounded-full mr-2"></span>
                 <span>9881608895</span>
               </div>
@@ -179,18 +183,19 @@ export default function Portfolio() {
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <AnimatedSection direction="left">
-              <img 
+              <LazyImage
                 src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800" 
                 alt="Professional headshot" 
                 className="rounded-2xl shadow-2xl hover:scale-105 hover:shadow-3xl transition-all duration-500 w-full max-w-md mx-auto" 
+                placeholder="Loading profile image..."
               />
             </AnimatedSection>
             
             <AnimatedSection direction="right">
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              <p className="text-lg text-primary mb-6 leading-relaxed">
                 Hi! I'm Pooja Rathod, a passionate aspiring software developer with a strong foundation in computer science. Currently pursuing my B.Tech in Computer Science with an impressive 9.70 GPA, I'm dedicated to creating innovative solutions through code.
               </p>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+              <p className="text-lg text-primary mb-8 leading-relaxed">
                 With expertise in Java, Python, and full-stack development, I've worked on diverse projects ranging from AI chatbots to e-commerce platforms. I believe in combining technical excellence with creative problem-solving to build applications that make a difference.
               </p>
               
@@ -201,7 +206,7 @@ export default function Portfolio() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="text-3xl font-bold text-rose-pink mb-2">7+</div>
-                  <div className="text-gray-600">Projects Completed</div>
+                  <div className="text-primary">Projects Completed</div>
                 </motion.div>
                 <motion.div 
                   className="text-center p-4 glass-effect rounded-xl"
@@ -209,7 +214,7 @@ export default function Portfolio() {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="text-3xl font-bold text-lavender mb-2">30+</div>
-                  <div className="text-gray-600">Events Coordinated</div>
+                  <div className="text-primary">Events Coordinated</div>
                 </motion.div>
               </div>
             </AnimatedSection>
@@ -280,7 +285,7 @@ export default function Portfolio() {
             <AnimatedSection delay={0.2}>
               <FlipCard
                 frontContent={
-                  <div className="bg-gradient-to-br from-rose-pink to-rose-light p-6 flex flex-col justify-center items-center text-white h-full">
+                  <div className="bg-gradient-to-br from-rose-pink to-rose-light p-6 flex flex-col justify-center items-center text-on-gradient h-full">
                     <Users className="w-12 h-12 mb-4" />
                     <h3 className="text-xl font-bold mb-2">Technical Coordinator</h3>
                     <p className="text-center">NBNSCOE</p>
@@ -289,8 +294,8 @@ export default function Portfolio() {
                 }
                 backContent={
                   <div className="p-6 flex flex-col justify-center h-full">
-                    <h3 className="text-lg font-bold text-gray-800 mb-4">Responsibilities</h3>
-                    <ul className="text-sm text-gray-600 space-y-2">
+                    <h3 className="text-lg font-bold text-primary mb-4">Responsibilities</h3>
+                    <ul className="text-sm text-secondary space-y-2">
                       <li>• Handled technical & non-technical events</li>
                       <li>• Managed registrations & venue arrangements</li>
                       <li>• Provided mentorship for contests</li>
@@ -304,7 +309,7 @@ export default function Portfolio() {
             <AnimatedSection delay={0.4}>
               <FlipCard
                 frontContent={
-                  <div className="bg-gradient-to-br from-lavender to-lavender-light p-6 flex flex-col justify-center items-center text-white h-full">
+                  <div className="bg-gradient-to-br from-lavender to-lavender-light p-6 flex flex-col justify-center items-center text-on-gradient h-full">
                     <Award className="w-12 h-12 mb-4" />
                     <h3 className="text-xl font-bold mb-2">Women's Representative</h3>
                     <p className="text-center">ISTE</p>
@@ -313,8 +318,8 @@ export default function Portfolio() {
                 }
                 backContent={
                   <div className="p-6 flex flex-col justify-center h-full">
-                    <h3 className="text-lg font-bold text-gray-800 mb-4">Responsibilities</h3>
-                    <ul className="text-sm text-gray-600 space-y-2">
+                    <h3 className="text-lg font-bold text-primary mb-4">Responsibilities</h3>
+                    <ul className="text-sm text-secondary space-y-2">
                       <li>• Represented girl students' concerns</li>
                       <li>• Participated in policy decisions</li>
                       <li>• Advocated for gender-sensitive policies</li>
@@ -328,7 +333,7 @@ export default function Portfolio() {
             <AnimatedSection delay={0.6}>
               <FlipCard
                 frontContent={
-                  <div className="bg-gradient-to-br from-coral to-rose-light p-6 flex flex-col justify-center items-center text-white h-full">
+                  <div className="bg-gradient-to-br from-coral to-rose-light p-6 flex flex-col justify-center items-center text-on-gradient h-full">
                     <Code className="w-12 h-12 mb-4" />
                     <h3 className="text-xl font-bold mb-2">Software Intern</h3>
                     <p className="text-center">WisdomSprouts</p>
@@ -337,8 +342,8 @@ export default function Portfolio() {
                 }
                 backContent={
                   <div className="p-6 flex flex-col justify-center h-full">
-                    <h3 className="text-lg font-bold text-gray-800 mb-4">Responsibilities</h3>
-                    <ul className="text-sm text-gray-600 space-y-2">
+                    <h3 className="text-lg font-bold text-primary mb-4">Responsibilities</h3>
+                    <ul className="text-sm text-secondary space-y-2">
                       <li>• Worked on weekly projects & tasks</li>
                       <li>• Full scholarship based internship</li>
                       <li>• Applied programming skills</li>
@@ -363,7 +368,7 @@ export default function Portfolio() {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Technical Skills */}
             <AnimatedSection direction="left">
-              <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Technical Skills</h3>
+              <h3 className="text-2xl font-bold text-primary mb-8 text-center">Technical Skills</h3>
               <div className="space-y-6">
                 {skills.map((skill, index) => (
                   <ProgressBar
@@ -380,7 +385,7 @@ export default function Portfolio() {
             
             {/* Soft Skills */}
             <AnimatedSection direction="right">
-              <h3 className="text-2xl font-bold text-gray-800 mb-8 text-center">Soft Skills</h3>
+              <h3 className="text-2xl font-bold text-primary mb-8 text-center">Soft Skills</h3>
               <div className="grid grid-cols-2 gap-4">
                 {softSkills.map((skill, index) => (
                   <motion.div
@@ -398,7 +403,7 @@ export default function Portfolio() {
                     <div style={{ color: skill.color }} className="mb-3">
                       {skill.icon}
                     </div>
-                    <h4 className="font-semibold text-gray-800">{skill.name}</h4>
+                    <h4 className="font-semibold text-primary">{skill.name}</h4>
                   </motion.div>
                 ))}
               </div>
@@ -457,8 +462,8 @@ export default function Portfolio() {
                   <div className="text-4xl mb-4 group-hover:animate-bounce-soft">
                     {achievement.icon}
                   </div>
-                  <h3 className="font-bold text-gray-800 mb-2">{achievement.title}</h3>
-                  <p className="text-sm text-gray-600">{achievement.desc}</p>
+                  <h3 className="font-bold text-primary mb-2">{achievement.title}</h3>
+                  <p className="text-sm text-secondary">{achievement.desc}</p>
                 </motion.div>
               </AnimatedSection>
             ))}
@@ -466,7 +471,7 @@ export default function Portfolio() {
           
           {/* Publications */}
           <AnimatedSection>
-            <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">Publications</h3>
+            <h3 className="text-2xl font-bold text-center text-primary mb-8">Publications</h3>
             <div className="max-w-2xl mx-auto">
               <motion.div 
                 className="glass-effect p-6 rounded-xl cursor-pointer group"
@@ -476,11 +481,11 @@ export default function Portfolio() {
                   boxShadow: '0 10px 30px rgba(244, 165, 211, 0.3)'
                 }}
               >
-                <h4 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-gradient transition-colors">
+                <h4 className="text-lg font-bold text-primary mb-2 group-hover:text-gradient transition-colors">
                   "Modern Ethical Considerations in AI"
                 </h4>
-                <p className="text-gray-600 mb-3">Co-authored with Vaishnavi Patil and Yash W</p>
-                <p className="text-sm text-gray-500">Research paper exploring ethical implications of artificial intelligence in modern applications</p>
+                <p className="text-secondary mb-3">Co-authored with Vaishnavi Patil and Yash W</p>
+                <p className="text-sm text-secondary">Research paper exploring ethical implications of artificial intelligence in modern applications</p>
                 <motion.div 
                   className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity"
                   initial={{ opacity: 0 }}
@@ -500,7 +505,7 @@ export default function Portfolio() {
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gradient">Let's Connect</h2>
             <div className="w-24 h-1 bg-gradient-to-r from-rose-pink to-lavender mx-auto rounded-full"></div>
-            <p className="text-lg text-gray-600 mt-6">Ready to collaborate? Let's create something amazing together!</p>
+            <p className="text-lg text-secondary mt-6">Ready to collaborate? Let's create something amazing together!</p>
           </AnimatedSection>
           
           <ContactForm />

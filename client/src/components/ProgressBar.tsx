@@ -33,7 +33,7 @@ export default function ProgressBar({ label, percentage, color, icon, delay = 0 
   return (
     <div ref={ref} className="skill-item">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-gray-700 font-semibold flex items-center">
+        <span className="text-primary font-semibold flex items-center">
           {icon && <span className="mr-3 text-2xl" style={{ color }}>{icon}</span>}
           {label}
         </span>
